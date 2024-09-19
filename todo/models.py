@@ -12,7 +12,8 @@ class Task(models.Model):
         COMPLETED = "completed", "Completed",
     
     title = models.CharField(max_length=255)
-    description = models.TextField()
+    description = models.TextField(null=True, blank=True)
+    due_date = models.DateField(null=True, blank=True)
     status = models.CharField(max_length=100, choices=Status, default=Status.PENDING)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now_add=True)
@@ -20,6 +21,6 @@ class Task(models.Model):
 
     class Meta:
         ordering = ["-created_at"]
-        
+
     def __str__(self) -> str:
         return f"{self.title} --> {self.status}" 
