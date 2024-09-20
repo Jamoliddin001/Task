@@ -1,8 +1,6 @@
-window.Telegram.WebApp.init();
-
-window.Telegram.WebApp.onEvent('web_app_close', function() {
-    console.log('Mini App Closed');
-});
-
-const user = window.Telegram.WebApp.initDataUnsafe.user;
-console.log("User ID:", user.id);
+if (window.Telegram && window.Telegram.WebApp) {
+    window.Telegram.WebApp.init();
+    console.log("Telegram WebApp инициализирован.");
+} else {
+    console.log("Запуск не внутри Telegram.");
+}
