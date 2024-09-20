@@ -1,6 +1,4 @@
-if (window.Telegram && window.Telegram.WebApp) {
-    window.Telegram.WebApp.init();
-    console.log("Telegram WebApp инициализирован.");
-} else {
-    console.log("Запуск не внутри Telegram.");
-}
+
+let btn = document.querySelector("button").addEventListener("click", ()=> {
+    document.write("Hello bro how are you")
+})
